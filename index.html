@@ -1,16 +1,59 @@
----
-layout: default
-title: ZhaoRui的个人博客
-description: Rea's Blog - 项目开发过程 | 学习笔记 | 所思所感随记
-keywords: Rea, zhaorui, ZhaoRui
----
-
-<div class="postlist">
-    {% for post in paginator.posts %}
-    <div class="overview">
-        <div class="date">{{ post.date | date: "%b %d, %Y" }}</div>
-        <div class="detail"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></div>
-    </div>
-    {% endfor %}
-</div>
-{% include pagination.html %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zhao Rui 的学习笔记与文章归档。">
+  <title>Zhao Rui｜笔记与文章</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Zhao Rui</a>
+    <nav aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/posts/">文章</a>
+      <a href="#about">关于</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="about">
+      <p class="eyebrow">学习记录 · 项目笔记</p>
+      <h1>你好，我是 Zhao Rui。</h1>
+      <p class="intro">计算机科学本科，做过数据库运维工作。现在重点学习 Python、SQL、数据分析和机器学习，并逐步整理可验证的项目。</p>
+      <a class="button" href="/posts/">浏览文章 <span aria-hidden="true">→</span></a>
+    </section>
+    <section class="section" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">从旧博客迁移</p>
+          <h2 id="archive-title">精选文章</h2>
+        </div>
+        <a class="text-link" href="/posts/">全部文章 →</a>
+      </div>
+      <p class="muted">旧文章仍保存在仓库的 _posts/ 目录。本页先展示已核对并整理成静态 HTML 的内容，其余文章之后再逐篇迁移。</p>
+      <div class="article-grid">
+        <article class="article-card">
+          <p class="meta">算法笔记 · 2023-03-09</p>
+          <h3><a href="/posts/sum-of-left-leaves.html">二叉树：左叶子之和</a></h3>
+          <p>递归遍历二叉树，累加所有左叶子节点的值。</p>
+        </article>
+        <article class="article-card">
+          <p class="meta">复习笔记 · 2023-02</p>
+          <h3><a href="/posts/frontend-interview-notes.html">前端与计算机基础面试复习笔记</a></h3>
+          <p>从旧笔记整理的主题清单，已省去公司名称和求职过程细节。</p>
+        </article>
+      </div>
+    </section>
+    <section class="section now">
+      <p class="eyebrow">当前方向</p>
+      <p>Python · SQL · 数据分析 · 机器学习</p>
+      <p class="muted">这里只记录正在学习和逐步完成的内容，不把旧练习包装成成熟项目。</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <span>© Zhao Rui</span>
+    <a href="https://github.com/ZR0528">GitHub</a>
+  </footer>
+</body>
+</html>

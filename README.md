@@ -1,3 +1,15 @@
-# 个人博客
+# 个人博客（静态版草稿）
 
-基于[jekyll-theme-solid](https://mazhuang.org/jekyll-theme-solid/)的模板进行了一些小改动，感谢码智
+当前分支将博客首页与精选文章改为原生 HTML/CSS 静态页面，预期由 GitHub Pages 直接发布。页面不依赖 Ruby、Bundler、主题包或前端构建工具。
+
+## 内容保留
+
+- 原有 _posts/、_wiki/、Jekyll 布局、配置与主题资源保留在仓库，作为旧站点源文件归档。
+- posts/ 中的两个静态页面由旧文章整理而来；面试笔记省去了公司名和求职细节。
+- 另外两篇二叉树笔记内容不完整或标题与正文不一致，暂不迁移，原 Markdown 文件保持不变。
+
+## 预览
+
+可直接用浏览器打开 index.html。正式发布后，GitHub Pages 可从 main 分支根目录发布静态文件；将空的 .nojekyll 文件放在根目录，避免 Jekyll 处理。
+
+仓库当前未验证 Pages 发布源设置。合并到默认分支后，若站点没有显示新页面，需要仓库管理员检查 Settings → Pages。旧 Jekyll 文件与 Markdown 原稿仍保留，历史文章后续可逐篇整理迁移。

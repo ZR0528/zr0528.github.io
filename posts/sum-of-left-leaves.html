@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="二叉树左叶子之和的递归解法笔记。">
+  <title>二叉树：左叶子之和｜Zhao Rui</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Zhao Rui</a>
+    <nav aria-label="主导航">
+      <a href="/">首页</a>
+      <a href="/posts/">文章</a>
+    </nav>
+  </header>
+  <main class="article-page">
+    <a class="back-link" href="/posts/">← 返回文章列表</a>
+    <p class="meta">算法笔记 · 2023-03-09</p>
+    <h1>二叉树：左叶子之和</h1>
+    <p class="lead">计算给定二叉树中所有左叶子节点的值之和。</p>
+    <p>对每个节点递归计算左右子树的和。如果左孩子存在且没有子节点，它就是左叶子，需要把它的值计入结果；否则继续累加左右子树的结果。</p>
+    <h2>TypeScript 参考实现</h2>
+    <pre><code>function sumOfLeftLeaves(root: TreeNode | null): number {
+  if (root === null) return 0;
+
+  if (root.left === null &amp;&amp; root.right === null) {
+    return 0;
+  }
+
+  let leftSum = sumOfLeftLeaves(root.left);
+
+  if (
+    root.left !== null
+    &amp;&amp; root.left.left === null
+    &amp;&amp; root.left.right === null
+  ) {
+    leftSum = root.left.val;
+  }
+
+  const rightSum = sumOfLeftLeaves(root.right);
+  return leftSum + rightSum;
+}</code></pre>
+    <p>题目：<a href="https://leetcode.cn/problems/sum-of-left-leaves/">力扣 404. 左叶子之和</a></p>
+    <p class="muted">由旧博客 Markdown 笔记整理为静态页面；仓库中的原始文章保留。</p>
+  </main>
+  <footer class="site-footer">
+    <span>© Zhao Rui</span>
+    <a href="https://github.com/ZR0528">GitHub</a>
+  </footer>
+</body>
+</html>
